@@ -16,9 +16,9 @@ window.onload = () => {
   
     const pattern = /^([1-9]\d*|0)$/;
 
-    const divAns = document.getElementById("divAns");
-    const fizz = document.getElementById("fizzNum").value;
-    const buzz = document.getElementById("buzzNum").value;
+    const divAns = document.getElementById('divAns');
+    const fizz = document.getElementById('fizzNum').value;
+    const buzz = document.getElementById('buzzNum').value;
   
     // 子要素を削除
     divAns.innerHTML = '';
@@ -29,21 +29,21 @@ window.onload = () => {
       const buzzNum = Number(buzz);
       for (let i = 1; i <= maxNum; i++) {
         let text = '';
-        if(i%fizzNum === 0){
+        if(i % fizzNum === 0){
           text = text + dispItem.fizz;
         }
-        if(i%buzzNum === 0){
+        if(i % buzzNum === 0){
           text = text + dispItem.buzz;
         }
         if(text !== ''){
-          const newRow = document.createElement("div");
+          const newRow = document.createElement('div');
           newRow.innerHTML = text + dispItem.space + i;
           divAns.appendChild(newRow);
         }
       }
     } else {
       // チェック失敗時のDOM生成処理
-      const newRow = document.createElement("div");
+      const newRow = document.createElement('div');
       newRow.innerHTML = dispItem.error;
       divAns.appendChild(newRow);
     }
